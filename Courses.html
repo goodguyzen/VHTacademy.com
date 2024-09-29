@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="coursestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="Logo VTH.png">
+    <title>VHT Web Prototype 1</title>
+</head>
+<body>
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-bar">
+        <header class="header">
+            <div class="close-btn">
+                <i class="fas fa-times"></i>
+            </div> 
+            <div class="logo-text">
+                <a href="infopage.html" class="logo-link" style="text-decoration: none">
+                    <div class="logo-text">
+                        <img src="Logo VTH.png" alt="Logo">
+                        <h1>VHT English Academy</h1>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="menu">
+            <div class="item"><a class="sub-btn"><i class="fas fa-comments"></i>Debates
+            <!--8options-->
+            <i class="fas fa-angle-right dropdown"></i>
+            </a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">Public Speaking</a>
+                    <a href="#" class="sub-item" data-pdf="Pdf/WSC Beginner Course Curriculum_VTH English Academy (2).pdf">WSC Beginner</a>
+                    <a href="#" class="sub-item" data-pdf="Pdf/WSC Novice Course Curriculum_VTH English Academy.pdf">WSC Novice</a>
+                    <a href="#" class="sub-item" data-pdf="Pdf/WSDC Beginner Course Curriculum_VTH English Academy.pdf">WSDC Beginner</a>
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">WSDC Novice</a>
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">AP</a>
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">BP</a>
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">Advance Public Forum</a>
+                </div>
+            </div>
+
+            <div class="item"><a class="sub-btn"><i class="fas fa-book-reader"></i>Intensive English
+            <i class="fas fa-angle-right dropdown"></i>
+            </a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">Under Construction</a>
+                </div>
+            </div>
+
+            <div class="item"><a class="sub-btn"><i class="fas fa-graduation-cap"></i>IELTS
+            <i class="fas fa-angle-right dropdown"></i>
+            </a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">Under Construction</a>
+                </div>
+            </div>
+
+            <div class="item"><a class="sub-btn"><i class="fas fa-user-tie"></i>1-1 VIP Classes
+            <i class="fas fa-angle-right dropdown"></i>
+            </a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">Under Construction</a>
+                </div>
+            </div>
+
+            <div class="item"><a class="sub-btn"><i class="fas fa-pencil-alt"></i>Creative Writing
+            <i class="fas fa-angle-right dropdown"></i>
+            </a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">Under Construction</a>
+                </div>
+            </div>
+
+            <div class="item"><a class="sub-btn"><i class="fas fa-file-alt"></i>Reasearch Writing
+            <i class="fas fa-angle-right dropdown"></i>
+            </a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item" data-pdf="underconstruction.html">Under Construction</a>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    <div class="main-content">
+        <img id="cover-image" src="Introduction.png" alt="Cover Image">
+        <iframe id="pdf-viewer" src=""></iframe>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.menu-btn').click(function(){
+                $('.side-bar').addClass('active');
+                $('.menu-btn').css("visibility", "hidden");
+            });
+            $('.close-btn').click(function(){
+                $('.side-bar').removeClass('active');
+                $('.menu-btn').css("visibility", "visible");
+            });
+
+            $('.sub-btn').click(function(){
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+
+            $('.sub-item').click(function(e){
+                e.preventDefault();
+                var pdfUrl = $(this).data('pdf');
+                $('#pdf-viewer').attr('src', pdfUrl);
+            });
+
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.side-bar, .menu-btn').length) {
+                    if ($('.side-bar').hasClass('active')) {
+                        $('.side-bar').removeClass('active');
+                        $('.menu-btn').css("visibility", "visible");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

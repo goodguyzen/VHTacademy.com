@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, rgba(240, 240, 240, 0.8), rgba(255, 255, 255, 0.8));
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-image: url('VTH English Academy.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Add padding to avoid content touching the edges */
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-right: 800px;
+    max-width: 100%; /* Ensure the form doesn't exceed the screen width */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #007bff; 
+}
+
+button {
+    background-color: #007bff; 
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #007bff; 
+    color: #ffffff;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+}
+
+th:hover {
+    background-color: #0056b3; 
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .login-form {
+        margin-right: 0; /* Remove the large margin on smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    button {
+        font-size: 1rem; /* Adjust button font size for smaller screens */
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 15px; /* Further adjust padding for very small screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Further adjust font size for very small screens */
+    }
+
+    button {
+        font-size: 0.9rem; /* Further adjust button font size for very small screens */
+        padding: 6px 12px; /* Further adjust button padding for very small screens */
+    }
+}
